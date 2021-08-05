@@ -1,3 +1,2 @@
 # fetchfilesize (Dutch)
-In csv-bestand
-In map
+csv-bestand versus map, op basis van file name
