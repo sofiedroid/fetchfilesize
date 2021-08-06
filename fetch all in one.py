@@ -25,7 +25,7 @@ def savefile():
 
 def choose():
     keuze = [variable.get(), variable2.get()]
-    if keuze == "directory":
+    if tuple(keuze) == ('', 'directory'):
         def start():
             column = ["filename", 'path', "filesize (MB)"]
             lijst = []
@@ -86,18 +86,18 @@ def choose():
         checkjpg.grid(row=4, column=1)
         checkwav.grid(row=4, column=2)
         checkmov.grid(row=4, column=3)
-        checkmp3.grid(row=5, column=0)
-        checkmp4.grid(row=5, column=1)
-        checktiff.grid(row=5, column=2)
-        checkJPG.grid(row=5, column=3)
-        checkTIF.grid(row=5, column=4)
+        checkmp3.grid(row=4, column=4)
+        checkmp4.grid(row=5, column=0)
+        checktiff.grid(row=5, column=1)
+        checkJPG.grid(row=5, column=2)
+        checkTIF.grid(row=5, column=3)
 
-        Info = Label(text="This tool ...")
-        Info.grid(row=0, column=0)
+        Info = Label(text="Choose filetype")
+        Info.grid(row=3, column=1)
 
-        buttonstart = Button(fetchfilesize, text="Start", padx=50, pady=10, borderwidth=10, bg="#fe37af",
+        buttonstart = Button(fetchfilesize, text="Fetch", bg="#fe37af",
                               command=start)
-        buttonstart.grid(row=7, column=0, columnspan=4)
+        buttonstart.grid(row=6, column=1, columnspan=2)
 
     else:
         def start():
@@ -119,7 +119,7 @@ def choose():
             messagebox.showinfo("Choose location", "Please choose a location to store the result")
             result.to_excel(savefile() + r"\result.xlsx")
 
-        buttonstart = Button(fetchfilesize, text="Start!", padx=50, pady=10, borderwidth=10, bg="#fe37af",
+        buttonstart = Button(fetchfilesize, text="Fetch", padx=50, pady=10, borderwidth=10, bg="#fe37af",
                              command=start)
         buttonstart.grid(row=7, column=0, columnspan=4)
 
@@ -130,17 +130,17 @@ fetchfilesize.configure(bg="#fed2ed")
 fetchfilesize.geometry("900x550")
 
 Info = Label(text="Please choose filesource and press start")
-Info.grid(row=0, column=0)
+Info.grid(row=0, column=1)
 
 variable=StringVar()
 variable2=StringVar()
 Filesource1 = Checkbutton(fetchfilesize, text="csv", variable=variable, onvalue = "csv", offvalue = "")
 Filesource2 = Checkbutton(fetchfilesize, text="directory", variable=variable2, onvalue = "directory", offvalue = "")
-Filesource1.grid(row=1, column=0)
-Filesource2.grid(row=1, column=1)
+Filesource1.grid(row=1, column=1)
+Filesource2.grid(row=1, column=2)
 
-buttonchoose = Button(fetchfilesize, text="Start", padx=50, pady=10, borderwidth=10, bg="#fe37af",
+buttonchoose = Button(fetchfilesize, text="Start", bg="#fe37af",
                      command=choose)
-buttonchoose.grid(row=7, column=0, columnspan=4)
+buttonchoose.grid(row=2, column=1, columnspan=2)
 
 fetchfilesize.mainloop()
