@@ -119,7 +119,7 @@ def choose():
             messagebox.showinfo("Choose location", "Please choose a location to store the result")
             result.to_excel(savefile() + r"\result.xlsx")
 
-        buttonstart = Button(fetchfilesize, text="Fetch", padx=50, pady=10, borderwidth=10, bg="#fe37af",
+        buttonstart = Button(fetchfilesize, text="Fetch", bg="#fe37af",
                              command=start)
         buttonstart.grid(row=7, column=0, columnspan=4)
 
