@@ -8,7 +8,7 @@ from tkinter import messagebox
 def info():
     infowindow = Toplevel()
     infolabel = Label(infowindow,
-                      text="This tool 'walks' through a *directory* and returns the *filename, filepath and filesize* for all files inside the directory and its subfolders.")
+                      text="This tool 'walks' through a directory and returns the filename, filepath and filesize for all files inside the directory and its subfolders.")
     infolabel.grid(row=0, column=0)
 
     blank7 = Label(infowindow, text="")
